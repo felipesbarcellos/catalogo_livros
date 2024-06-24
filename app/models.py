@@ -11,10 +11,6 @@ from sqlalchemy import create_engine
 class Base(DeclarativeBase):
     pass
 
-class User(Base):
-    __tablename__ = "user_account"
-
-
 class Book(Base):
     __tablename__ = "books"
     id: Mapped[int] = mapped_column(primary_key=True)
