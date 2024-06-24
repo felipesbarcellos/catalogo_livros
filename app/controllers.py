@@ -16,7 +16,11 @@ def select_all_authors():
     for author in session.scalars(stmt):
         print(author)
 
-def create_book():
+def create_book(nome:str, authors: list[Author]):
+    session = Session(engine)
+    book = Book(name=nome, authors=authors)
+    session.add(book)
+    session.commit()
     ...
     pass
 
