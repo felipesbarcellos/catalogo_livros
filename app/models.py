@@ -11,6 +11,10 @@ from sqlalchemy import create_engine
 class Base(DeclarativeBase):
     pass
 
+class User(Base):
+    __tablename__ = "user_account"
+
+
 class Book(Base):
     __tablename__ = "books"
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -27,7 +31,7 @@ class Author(Base):
     first_name: Mapped[str]
     last_name: Mapped[str]
     book_id: Mapped[int] = mapped_column(ForeignKey("books.id"))
-    book: Mapped["Book"] = relationship(back_populates="authors")
+    books: Mapped[List[Book]] = relationship(back_populates="authors")
     def __repr__(self) -> str:
         return f"Author(id={self.id!r}, first_name={self.first_name!r}, last_name={self.last_name!r})"
 
