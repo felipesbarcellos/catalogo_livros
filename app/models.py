@@ -17,7 +17,7 @@ class Book(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str]
     authors: Mapped[List["Author"]] = relationship(
-        back_populates="user", cascade='all, delete-orphan'
+        back_populates="book", cascade='all, delete-orphan'
     )
     def __repr__(self) -> str:
         return f"Book(id={self.id!r}, name={self.name!r}), authors={self.authors!r})"
@@ -33,5 +33,5 @@ class Author(Base):
         return f"Author(id={self.id!r}, first_name={self.first_name!r}, last_name={self.last_name!r})"
 
 if __name__ == "__main__":
-    engine = create_engine("sqlite://", echo=True)
+    engine = create_engine("sqlite:///books.db", echo=True)
     Base.metadata.create_all(engine)
