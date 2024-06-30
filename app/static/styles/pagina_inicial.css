@@ -1,0 +1,90 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #E1D2B8;
+}
+
+header{
+    position: relative;
+    background-color: #312B21;
+    width: 100%;
+    display: block;
+}
+
+#header-top{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 3vw;
+    color: #fff;
+    font-family: "Kalam", cursive;
+}
+
+#header-nav{
+    background-color: #894E1D;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.ul-header-nav li, .ul-header-nav li a{
+    display: inline-block;
+    font-size: 1.6vw;
+    color: #E1D2B8;
+    text-decoration: none;
+    align-items: center;
+    vertical-align: middle;
+}
+.ul-header-nav li{
+    padding: 0 1vw;
+}
+#paginas, #conta {
+    vertical-align: middle;
+}
+
+#campo_busca{
+    height: 5vw;
+    width: 18vw;
+}
+
+.section{
+    background-color: #894E1D;
+    width: 90%;
+    margin: 5% auto;
+}
+
+.section h2{
+    padding: 3vw;
+    color: #E1D2B8;
+}
+
+#section-topo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.filtro_livros{
+    padding: 2vw;
+}
+
+.filtro_livros p{
+    color: #E1D2B8;
+    font-size: 2vw;
+}
+
+.livros_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    margin: 0 auto;
+}
+
+.item-livro{
+    padding: 10%;
+}

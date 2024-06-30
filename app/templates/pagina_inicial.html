@@ -4,9 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+    </style>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/pagina_inicial.css')}}">
 </head>
 <body>
-    {% if current_user.is_authenticated %}
+    <header>
+        <div id="header-top">
+            <h1>Leitura Livre</h1>
+        </div>
+        <nav id="header-nav">
+            <ul id="paginas" class="ul-header-nav">
+                <li>
+                    <a href="pagina_inicial" class="nav_buttons">
+                        Início
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="nav_buttons">
+                        Explorar
+                    </a>
+                </li>
+            </ul>
+            <div id="busca">
+                <input type="text" name="busca" id="campo_busca", placeholder="🔎">
+            </div>
+            <ul id="conta" class="ul-header-nav">
+                <li>
+                    <a href="entrar.html">Logar</a>
+                </li>
+                <li>
+                    <a href="registrar.html">Cadastrar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section" id="livros-populares">
+        <div id="section-topo">
+            <div>
+                <h2>Livros populares</h2>
+            </div>
+            <div class="filtro_livros">
+                <p>Filtrar</p>
+                <input type="text" name="filtro">
+            </div>
+        </div>
+        <div class="livros_grid">
+            <div class="item-livro">
+                <a href="">
+                    <img src="" alt="" width="140px" height="210px">
+                    <p>Nome do livro</p>
+                </a>
+            </div>
+            <div class="item-livro">
+                <a href="">
+                    <img src="" alt="" width="140px" height="210px">
+                    <p>Nome do livro</p>
+                </a>
+            </div>
+            <div class="item-livro">
+                <a href="">
+                    <img src="" alt="" width="140px" height="210px">
+                    <p>Nome do livro</p>
+                </a>
+            </div>
+            <div class="item-livro">
+                <a href="">
+                    <img src="" alt="" width="140px" height="210px">
+                    <p>Nome do livro</p>
+                </a>
+            </div>
+            <div class="item-livro">
+                <a href="">
+                    <img src="" alt="" width="140px" height="210px">
+                    <p>Nome do livro</p>
+                </a>
+            </div>
+            <div class="item-livro">
+                <a href="">
+                    <img src="" alt="" width="140px" height="210px">
+                    <p>Nome do livro</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- {% if current_user.is_authenticated %}
     <div>
         <p>Olá, {{ current_user.username }} </p>
         <a href="{{ url_for('sair') }}">Sair</a>
@@ -18,6 +101,6 @@
         <a href=" {{ url_for('entrar')}}">Entrar</a>
         <a href=" {{ url_for('registrar')}}">Criar uma conta</a>
     </div>
-    {% endif %}
+    {% endif %} -->
 </body>
 </html>
